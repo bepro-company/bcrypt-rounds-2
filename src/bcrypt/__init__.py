@@ -57,7 +57,7 @@ def gensalt(rounds: int = 12, prefix: bytes = b"2b") -> bytes:
     if prefix not in (b"2a", b"2b"):
         raise ValueError("Supported prefixes are b'2a' or b'2b'")
 
-    if rounds < 4 or rounds > 31:
+    if rounds < 2 or rounds > 31:
         raise ValueError("Invalid rounds")
 
     salt = os.urandom(16)
